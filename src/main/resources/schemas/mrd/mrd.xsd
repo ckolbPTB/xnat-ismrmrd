@@ -30,11 +30,12 @@
 			<xs:documentation>Information about an individual MR raw data scan.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="xnat:mrScanData">
+			<xs:extension base="xnat:imageScanData">
 				<xs:sequence>
 					<xs:element maxOccurs="1" minOccurs="0" name="mrdVersion" type="xs:long" />
 					<xs:element maxOccurs="1" minOccurs="0" name="subjectInformation" type="subjectInformationType" />
 
+					<xs:element maxOccurs="1" minOccurs="1" name="trajectory" type="trajectoryType" />
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -56,6 +57,17 @@
 			</xs:element>
 		</xs:all>
 	</xs:complexType>
+
+	<xs:simpleType name="trajectoryType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="cartesian" />
+			<xs:enumeration value="epi" />
+			<xs:enumeration value="radial" />
+			<xs:enumeration value="goldenangle" />
+			<xs:enumeration value="spiral" />
+			<xs:enumeration value="other" />
+		</xs:restriction>
+	</xs:simpleType>
 
 
 </xs:schema>

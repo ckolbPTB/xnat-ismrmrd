@@ -1,4 +1,4 @@
-<!-- START /xnat-templates/screens/xnat_mrScanData/xnat_mrScanData_details.vm -->
+<!-- START /screens/mrd_mrIsmrmrdScanData/mrd_mrIsmrmrdScanData_details.vm -->
 #macro(escapeProperty $prop)#escapeCleanHTML("$!scan.getProperty($prop)")#end
 <table class="xnat-table alt1 compact rows-only scan-details scan-details-table" style="border: none;">
     <tr>
@@ -11,6 +11,24 @@
         <tr>
             <th>Quality</th>
             <td align="left"><span>#escapeProperty("quality")</span></td>
+        </tr>
+    #end
+    #if($scan.getProperty("trajectory"))
+        <tr>
+            <th>Trajectory</th>
+            <td align="left"><span>#escapeProperty("trajectory")</span></td>
+        </tr>
+    #end
+    #if($scan.getProperty("mrdVersion"))
+        <tr>
+            <th>MrdVersion</th>
+            <td align="left"><span>#escapeProperty("mrdVersion")</span></td>
+        </tr>
+    #end
+    #if($scan.getProperty("subjectInformation.patientWeight_kg"))
+        <tr>
+            <th>Patient Weight</th>
+            <td align="left"><span>#escapeProperty("subjectInformation.patientWeight_kg")</span></td>
         </tr>
     #end
     #if($scan.getProperty("condition"))
@@ -51,7 +69,7 @@
     #end
     #if($scan.getProperty("fieldStrength"))
         <tr>
-            <th>Field Strength - ISMRMRD</th>
+            <th>Field Strength MR RAW DATA</th>
             <td align="left"><span>#escapeProperty("fieldStrength")</span></td>
         </tr>
     #end
@@ -185,4 +203,4 @@
         </tr>
     #end
 </table>
-<!-- END /xnat-templates/screens/xnat_mrScanData/xnat_mrScanData_details.vm -->
+<!-- END /screens/mrd_mrIsmrmrdScanData/mrd_mrIsmrmrdScanData_details.vm-->
