@@ -11,13 +11,13 @@ package org.nrg.xnat.mrd;
 
 import org.nrg.framework.annotations.XnatDataModel;
 import org.nrg.framework.annotations.XnatPlugin;
-import org.nrg.xdat.bean.MrdMrismrmrdscandataBean;
+import org.nrg.xdat.bean.MrdMrdscandataBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
 @XnatPlugin(value = "mrdPlugin", name = "XNAT 1.8 ISMRMRD plugin",
-            dataModels = {@XnatDataModel(value = MrdMrismrmrdscandataBean.SCHEMA_ELEMENT_NAME,
-                                         singular = "ISMRMRD raw",
-                                         plural = "ISMRMRD raws")})
+            dataModels = {@XnatDataModel(value = MrdMrdscandataBean.SCHEMA_ELEMENT_NAME,
+                                         singular = "MRD",
+                                         plural = "MRDs")})
 public class MrdXnatPlugin {
 }

@@ -1,4 +1,4 @@
-<!-- START /screens/mrd_mrIsmrmrdScanData/mrd_mrIsmrmrdScanData_details.vm -->
+<!-- START /screens/mrd_mrdScanData/mrd_mrdScanData_details.vm -->
 #macro(escapeProperty $prop)#escapeCleanHTML("$!scan.getProperty($prop)")#end
 <table class="xnat-table alt1 compact rows-only scan-details scan-details-table" style="border: none;">
     <tr>
@@ -84,4 +84,4 @@
     </tr>
     #end
 </table>
-<!-- END /screens/mrd_mrIsmrmrdScanData/mrd_mrIsmrmrdScanData_details.vm-->
+<!-- END /screens/mrd_mrdScanData/mrd_mrdScanData_details.vm-->
