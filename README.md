@@ -1,2 +1,2 @@
-# xnat-ismrmrd
-xnat schema for ISMRMRD raw data
+# MRD
+Xnat schema for ISMRMRD data format.

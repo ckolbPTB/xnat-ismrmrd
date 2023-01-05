@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ mrd: mrd.xsd
+  ~ XNAT https://www.xnat.org
+  ~ Copyright (c) 2022, Physikalisch-Technische Bundesanstalt
+  ~ All Rights Reserved
+  ~
+  ~ Released under Apache 2.0
+  -->
+
+<!--
+	TODO: You can use this as the basis for an XNAT data-type definition or simply delete it. Note that there are other
+	files related to the data type defined here:
+
+	 - src/main/java/org/apache/turbine/app/xnat/modules/screens/XDATScreen_edit_template_sample.java
+	 - src/main/java/org/apache/turbine/app/xnat/modules/screens/XDATScreen_report_template_sample.java
+	 - src/main/resources/META-INF/resources/templates/screens/XDATScreen_edit_template_sample.vm
+	 - src/main/resources/META-INF/resources/templates/screens/XDATScreen_report_template_sample.vm
+	 - src/main/resources/META-INF/resources/templates/screens/xnat_subjectData/actionsBox/sample.vm
+-->
+<xs:schema targetNamespace="http://ptb.de/mrd" xmlns:mrd="http://ptb.de/mrd"
+		   xmlns:xnat="http://nrg.wustl.edu/xnat"
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://nrg.wustl.edu/xnat" schemaLocation="../xnat/xnat.xsd"/>
+	<xs:element name="mrdScanData" type="mrd:mrdScanData"/>
+
+	<xs:complexType name="mrdScanData">
+		<xs:annotation>
+			<xs:documentation>Information about an individual MR raw data scan.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="xnat:imageScanData">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="trajectory" type="trajectoryType" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<xs:simpleType name="trajectoryType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="cartesian" />
+		<xs:enumeration value="epi" />
+		<xs:enumeration value="radial" />
+		<xs:enumeration value="goldenangle" />
+		<xs:enumeration value="spiral" />
+		<xs:enumeration value="other" />
+	</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

@@ -1,5 +1,5 @@
 /*
- * xnat-ismrmrd: settings.gradle
+ * mrd: settings.gradle
  * Copyright (c) 2022, Physikalisch-Technische Bundesanstalt
  * All Rights Reserved
  *
@@ -20,5 +20,5 @@ pluginManagement {
 
 // Replace this with your project name. The project name should indicate
 // the function of the plugin.
-rootProject.name = "xnat-ismrmrd"
+rootProject.name = "mrd"
 
