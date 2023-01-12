@@ -19,6 +19,6 @@ import org.springframework.context.annotation.ComponentScan;
             dataModels = {@XnatDataModel(value = MrdMrdscandataBean.SCHEMA_ELEMENT_NAME,
                                          singular = "MR raw data",
                                          plural = "MR raw data",
-                                         code = "MRD")})
+                                         code = "ISMRMRD")})
 public class MrdXnatPlugin {
 }

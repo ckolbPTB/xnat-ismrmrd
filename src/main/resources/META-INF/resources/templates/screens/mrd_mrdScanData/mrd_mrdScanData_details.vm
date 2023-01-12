@@ -9,10 +9,16 @@
     </tr>
     #if($scan.getProperty("trajectory"))
         <tr>
-            <th>Trajectory</th>
+            <th>ISMRMRD4 trajectory</th>
             <td align="left"><span>#escapeProperty("trajectory")</span></td>
         </tr>
     #end
+    #if($scan.getProperty("subjectInformation.patientName"))
+            <tr>
+                <th>ISMRMRD2 patname</th>
+                <td align="left"><span>#escapeProperty("subjectInformation.patientName")</span></td>
+            </tr>
+        #end
     #if($scan.getProperty("quality"))
         <tr>
             <th>Quality</th>
