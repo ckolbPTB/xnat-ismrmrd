@@ -7,87 +7,168 @@
             <span>#scanSnapshotImage($content $om $scan)</span>
         </td>
     </tr>
-    #if($scan.getProperty("trajectory"))
+    #if($scan.getProperty("subjectInformation.patientWeight_kg"))
         <tr>
-            <th>ISMRMRD4 trajectory</th>
-            <td align="left"><span>#escapeProperty("trajectory")</span></td>
+            <th>Patient weight (kg)</th>
+            <td align="left"><span>#escapeProperty("subjectInformation.patientWeight_kg")</span></td>
         </tr>
     #end
-    #if($scan.getProperty("subjectInformation.patientName"))
+    #if($scan.getProperty("subjectInformation.patientHeight_m"))
+        <tr>
+            <th>Patient height (m)</th>
+            <td align="left"><span>#escapeProperty("subjectInformation.patientHeight_m")</span></td>
+        </tr>
+    #end
+    #if($scan.getProperty("measurementInformation.protocolName"))
+        <tr>
+            <th>Protocol name</th>
+            <td align="left"><span>#escapeProperty("measurementInformation.protocolName")</span></td>
+        </tr>
+    #end
+    #if($scan.getProperty("measurementInformation.sequenceName"))
+        <tr>
+            <th>Sequence name</th>
+            <td align="left"><span>#escapeProperty("measurementInformation.sequenceName")</span></td>
+        </tr>
+    #end
+    #if($scan.getProperty("encoding.trajectory"))
+        <tr>
+            <th>Trajectory</th>
+            <td align="left"><span>#escapeProperty("encoding.trajectory")</span></td>
+        </tr>
+    #end
+    #if($scan.getProperty("acquisitionSystemInformation.systemFieldStrength_T"))
+        <tr>
+            <th>Field strength (T)</th>
+            <td align="left"><span>#escapeProperty("acquisitionSystemInformation.systemFieldStrength_T")</span></td>
+        </tr>
+    #end
+    #if($!scan.getProperty("encoding.encodedSpace.matrixSize.x") || $!scan.getProperty("encoding.encodedSpace.matrixSize.y") || $!scan.getProperty("encoding.encodedSpace.matrixSize.z"))
+        <tr>
+            <th>Enc Matrix</th>
+            <td align="left"><span>#escapeProperty("encoding.encodedSpace.matrixSize.x") &times; #escapeProperty("encoding.encodedSpace.matrixSize.y") &times; #escapeProperty("encoding.encodedSpace.matrixSize.z")</span></td>
+        </tr>
+    #end
+    #if($!scan.getProperty("encoding.reconSpace.matrixSize.x") || $!scan.getProperty("encoding.reconSpace.matrixSize.y") || $!scan.getProperty("encoding.reconSpace.matrixSize.z"))
+        <tr>
+            <th>Rec Matrix</th>
+            <td align="left"><span>#escapeProperty("encoding.reconSpace.matrixSize.x") &times; #escapeProperty("encoding.reconSpace.matrixSize.y") &times; #escapeProperty("encoding.reconSpace.matrixSize.z")</span></td>
+        </tr>
+    #end
+    #if($!scan.getProperty("encoding.encodedSpace.fieldOfView_mm.x") || $!scan.getProperty("encoding.encodedSpace.fieldOfView_mm.y") || $!scan.getProperty("encoding.encodedSpace.fieldOfView_mm.z"))
+        <tr>
+            <th>Enc FOV</th>
+            <td align="left"><span>#escapeProperty("encoding.encodedSpace.fieldOfView_mm.x") &times; #escapeProperty("encoding.encodedSpace.fieldOfView_mm.y") &times; #escapeProperty("encoding.encodedSpace.fieldOfView_mm.z")</span></td>
+        </tr>
+    #end
+    #if($!scan.getProperty("encoding.reconSpace.fieldOfView_mm.x") || $!scan.getProperty("encoding.reconSpace.fieldOfView_mm.y") || $!scan.getProperty("encoding.reconSpace.fieldOfView_mm.z"))
+        <tr>
+            <th>Rec FOV</th>
+            <td align="left"><span>#escapeProperty("encoding.reconSpace.fieldOfView_mm.x") &times; #escapeProperty("encoding.reconSpace.fieldOfView_mm.y") &times; #escapeProperty("encoding.reconSpace.fieldOfView_mm.z")</span></td>
+        </tr>
+    #end
+    #if($!scan.getProperty("encoding.parallelImaging.accelerationFactor.kspace_enc_step_1") || $!scan.getProperty("encoding.parallelImaging.accelerationFactor.kspace_enc_step_2") )
+        <tr>
+            <th>Acc factors</th>
+            <td align="left"><span>#escapeProperty("encoding.parallelImaging.accelerationFactor.kspace_enc_step_1") &times; #escapeProperty("encoding.parallelImaging.accelerationFactor.kspace_enc_step_2")</span></td>
+        </tr>
+    #end
+    #if($!scan.getProperty("encoding.encodingLimits.kspace_encoding_step_0.minimum") || $!scan.getProperty("encoding.encodingLimits.kspace_encoding_step_0.center") || $!scan.getProperty("encoding.encodingLimits.kspace_encoding_step_0.maximum"))
+        <tr>
+            <th>KStep 0</th>
+            <td align="left"><span>#escapeProperty("encoding.encodingLimits.kspace_encoding_step_0.minimum") &ndash; #escapeProperty("encoding.encodingLimits.kspace_encoding_step_0.center") &ndash; #escapeProperty("encoding.encodingLimits.kspace_encoding_step_0.maximum")</span></td>
+        </tr>
+    #end
+    #if($!scan.getProperty("encoding.encodingLimits.kspace_encoding_step_1.minimum") || $!scan.getProperty("encoding.encodingLimits.kspace_encoding_step_1.center") || $!scan.getProperty("encoding.encodingLimits.kspace_encoding_step_1.maximum"))
+        <tr>
+            <th>KStep 1</th>
+            <td align="left"><span>#escapeProperty("encoding.encodingLimits.kspace_encoding_step_1.minimum") &ndash; #escapeProperty("encoding.encodingLimits.kspace_encoding_step_1.center") &ndash; #escapeProperty("encoding.encodingLimits.kspace_encoding_step_1.maximum")</span></td>
+        </tr>
+    #end
+    #if($!scan.getProperty("encoding.encodingLimits.kspace_encoding_step_2.minimum") || $!scan.getProperty("encoding.encodingLimits.kspace_encoding_step_2.center") || $!scan.getProperty("encoding.encodingLimits.kspace_encoding_step_2.maximum"))
+        <tr>
+            <th>KStep 2</th>
+            <td align="left"><span>#escapeProperty("encoding.encodingLimits.kspace_encoding_step_2.minimum") &ndash; #escapeProperty("encoding.encodingLimits.kspace_encoding_step_2.center") &ndash; #escapeProperty("encoding.encodingLimits.kspace_encoding_step_2.maximum")</span></td>
+        </tr>
+    #end
+    #if($!scan.getProperty("encoding.encodingLimits.average.minimum") || $!scan.getProperty("encoding.encodingLimits.average.center") || $!scan.getProperty("encoding.encodingLimits.average.maximum"))
+        <tr>
+            <th>Average</th>
+            <td align="left"><span>#escapeProperty("encoding.encodingLimits.average.minimum") &ndash; #escapeProperty("encoding.encodingLimits.average.center") &ndash; #escapeProperty("encoding.encodingLimits.average.maximum")</span></td>
+        </tr>
+    #end
+    #if($!scan.getProperty("encoding.encodingLimits.slice.minimum") || $!scan.getProperty("encoding.encodingLimits.slice.center") || $!scan.getProperty("encoding.encodingLimits.slice.maximum"))
+        <tr>
+            <th>Slice</th>
+            <td align="left"><span>#escapeProperty("encoding.encodingLimits.slice.minimum") &ndash; #escapeProperty("encoding.encodingLimits.slice.center") &ndash; #escapeProperty("encoding.encodingLimits.slice.maximum")</span></td>
+        </tr>
+    #end
+    #if($!scan.getProperty("encoding.encodingLimits.contrast.minimum") || $!scan.getProperty("encoding.encodingLimits.contrast.center") || $!scan.getProperty("encoding.encodingLimits.contrast.maximum"))
+        <tr>
+            <th>Contrast</th>
+            <td align="left"><span>#escapeProperty("encoding.encodingLimits.contrast.minimum") &ndash; #escapeProperty("encoding.encodingLimits.contrast.center") &ndash; #escapeProperty("encoding.encodingLimits.contrast.maximum")</span></td>
+        </tr>
+    #end
+    #if($!scan.getProperty("encoding.encodingLimits.phase.minimum") || $!scan.getProperty("encoding.encodingLimits.phase.center") || $!scan.getProperty("encoding.encodingLimits.phase.maximum"))
+        <tr>
+            <th>Phase</th>
+            <td align="left"><span>#escapeProperty("encoding.encodingLimits.phase.minimum") &ndash; #escapeProperty("encoding.encodingLimits.phase.center") &ndash; #escapeProperty("encoding.encodingLimits.phase.maximum")</span></td>
+        </tr>
+    #end
+    #if($!scan.getProperty("encoding.encodingLimits.repetition.minimum") || $!scan.getProperty("encoding.encodingLimits.repetition.center") || $!scan.getProperty("encoding.encodingLimits.repetition.maximum"))
+        <tr>
+            <th>Repetition</th>
+            <td align="left"><span>#escapeProperty("encoding.encodingLimits.repetition.minimum") &ndash; #escapeProperty("encoding.encodingLimits.repetition.center") &ndash; #escapeProperty("encoding.encodingLimits.repetition.maximum")</span></td>
+        </tr>
+    #end
+    #if($!scan.getProperty("encoding.encodingLimits.set.minimum") || $!scan.getProperty("encoding.encodingLimits.set.center") || $!scan.getProperty("encoding.encodingLimits.set.maximum"))
+        <tr>
+            <th>Set</th>
+            <td align="left"><span>#escapeProperty("encoding.encodingLimits.set.minimum") &ndash; #escapeProperty("encoding.encodingLimits.set.center") &ndash; #escapeProperty("encoding.encodingLimits.set.maximum")</span></td>
+        </tr>
+    #end
+    #if($!scan.getProperty("encoding.encodingLimits.segment.minimum") || $!scan.getProperty("encoding.encodingLimits.segment.center") || $!scan.getProperty("encoding.encodingLimits.segment.maximum"))
+        <tr>
+            <th>Segment</th>
+            <td align="left"><span>#escapeProperty("encoding.encodingLimits.segment.minimum") &ndash; #escapeProperty("encoding.encodingLimits.segment.center") &ndash; #escapeProperty("encoding.encodingLimits.segment.maximum")</span></td>
+        </tr>
+    #end
+    #if($scan.getProperty("sequenceParameters.TR"))
+        <tr>
+            <th>TR</th>
+            <td align="left"><span>#escapeProperty("sequenceParameters.TR")</span></td>
+        </tr>
+    #end
+    #if($scan.getProperty("sequenceParameters.echo_spacing"))
             <tr>
-                <th>ISMRMRD2 patname</th>
-                <td align="left"><span>#escapeProperty("subjectInformation.patientName")</span></td>
+                <th>Echo spacing</th>
+                <td align="left"><span>#escapeProperty("sequenceParameters.echo_spacing")</span></td>
             </tr>
         #end
-    #if($scan.getProperty("quality"))
+    #if($scan.getProperty("sequenceParameters.TE"))
         <tr>
-            <th>Quality</th>
-            <td align="left"><span>#escapeProperty("quality")</span></td>
+            <th>TE</th>
+            <td align="left"><span>#escapeProperty("sequenceParameters.TE")</span></td>
         </tr>
     #end
-    #if($scan.getProperty("startTime"))
+    #if($scan.getProperty("sequenceParameters.TI"))
         <tr>
-            <th>Start Time</th>
-            <td align="left"><span>#escapeProperty("startTime")</span></td>
+            <th>TI</th>
+            <td align="left"><span>#escapeProperty("sequenceParameters.TI")</span></td>
         </tr>
     #end
-    #if($scan.getProperty("condition"))
+    #if($scan.getProperty("sequenceParameters.flipAngle_deg"))
         <tr>
-            <th>Condition</th>
-            <td align="left"><span>#escapeProperty("condition")</span></td>
+            <th>Flip angle (deg)</th>
+            <td align="left"><span>#escapeProperty("sequenceParameters.flipAngle_deg")</span></td>
         </tr>
     #end
-    #if($scan.getProperty("series_description"))
+    #if($scan.getProperty("encoding.echoTrainLength"))
         <tr>
-            <th>Series Desc</th>
-            <td align="left"><span>#escapeProperty("series_description")</span></td>
-        </tr>
-    #end
-    #if($scan.getProperty("modality"))
-        <tr>
-            <th>Modality</th>
-            <td align="left"><span>#escapeProperty("modality")</span></td>
-        </tr>
-    #end
-    #if($scan.getProperty("frames"))
-        <tr>
-            <th>Frames</th>
-            <td align="left"><span>#escapeProperty("frames")</span></td>
-        </tr>
-    #end
-    #if($scan.getProperty("note"))
-        <tr>
-            <th>Note</th>
-            <td align="left"><span>#escapeProperty("note")</span></td>
-        </tr>
-    #end
-    #foreach($addP in $turbineUtils.sortByName($scan.getParameters_addparam()))
-        <tr>
-            <th>$!addP.getName()</th>
-            <td align="left"><span class="truncate">#escapeCleanHTML($!addP.getAddfield())</span></td>
+            <th>Echo train length</th>
+            <td align="left"><span>#escapeProperty("encoding.echoTrainLength")</span></td>
         </tr>
     #end
 
-    #if($scan.getUid())
-    <tr>
-        <td></td>
-        <td>
-            <a target="_blank" class="view-dicom-headers" href="$content.getURI("/REST/services/dicomdump?src=/archive/projects/$om.getProject()/experiments/$om.getId()/scans/$scan.getId()&format=html&requested_screen=DicomScanTable.vm")">
-                View DICOM Headers
-            </a>
-        </td>
-    </tr>
-    #end
-
-    #if ($scan.getParameters_ecatcalibrationfactor())
-    <tr>
-        <td></td>
-        <td>
-            <a target="_blank" class="view-dicom-headers" href="$content.getURI("/REST/services/ecatdump?src=/archive/projects/$om.getProject()/experiments/$om.getId()/scans/$scan.getId()&format=html&requested_screen=EcatScanTable.vm")">
-                    View ECAT Headers
-            </a>
-        </td>
-    </tr>
-    #end
 </table>
 <!-- END /screens/mrd_mrdScanData/mrd_mrdScanData_details.vm-->

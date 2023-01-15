@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8"?><Displays xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xdat/display.xsd" schema-element="mrd:mrdScanData" full-description="mrdScanData" brief-description="mrdScanData">
+	<DisplayField id="SESSION_ID" header="image_session_ID" visible="false" searchable="false">
+		<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/image_session_ID"/>
+	</DisplayField>
+	<DisplayField id="SESSION_LABEL" header="Session Label" visible="true" searchable="true">
+		<DisplayFieldElement name="Field1" schema-element="xnat:imageSessionData.label"/>
+		<HTML-Link>
+			<Property name="HREF" value="@WEBAPPdata/experiments/@Field3?format=html">
+				<InsertValue id="Field3" field="SESSION_ID"/>
+			</Property>
+		</HTML-Link>
+	</DisplayField>
+	<DisplayField id="SUBJECT_ID" header="Subject" visible="true" searchable="true">
+		<DisplayFieldElement name="Field1" schema-element="xnat:imageSessionData.subject_ID"/>
+		<HTML-Link>
+			<Property name="HREF" value="none"/>
+			<Property name="ONCLICK" value="return rpt('@Field1','xnat:subjectData','xnat:subjectData.ID');">
+				<InsertValue id="Field1" field="SUBJECT_ID"/>
+			</Property>
+		</HTML-Link>
+	</DisplayField>
+	<DisplayField id="PROJECT" header="Project" visible="true" searchable="true">
+		<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/project"/>
+		<HTML-Link>
+			<Property name="HREF" value="@WEBAPPapp/action/DisplayItemAction/search_value/@Field1/search_element/xnat:projectData/search_field/xnat:projectData.ID">
+				<InsertValue id="Field1" field="PROJECT"/>
+			</Property>
+			<Property name="ONCLICK" value="return rpt('@Field1','xnat:projectData','xnat:projectData.ID');">
+				<InsertValue id="Field1" field="PROJECT"/>
+			</Property>
+		</HTML-Link>
+	</DisplayField>
+	<DisplayField id="ID" header="ID" visible="true" searchable="true">
+		<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/ID"/>
+		<HTML-Link>
+			<Property name="HREF" value="@WEBAPPdata/experiments/@Field3/scans/@Field4?format=html">
+				<InsertValue id="Field1" field="PROJECT"/>
+				<InsertValue id="Field2" field="SUBJECT_ID"/>
+				<InsertValue id="Field3" field="SESSION_ID"/>
+				<InsertValue id="Field4" field="ID"/>
+			</Property>
+		</HTML-Link>
+	</DisplayField>
+<DisplayField id="VERSION" header="Version" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/version"/>	
+</DisplayField>
+<DisplayField id="SUBJECTINFORMATION_PATIENTNAME" header="Patient name" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/subjectInformation/patientName"/>	
+</DisplayField>
+<DisplayField id="SUBJECTINFORMATION_PATIENTWEIGHT_KG" header="Patient weight kg" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/subjectInformation/patientWeight_kg"/>	
+</DisplayField>
+<DisplayField id="SUBJECTINFORMATION_PATIENTHEIGHT_M" header="Patient height m" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/subjectInformation/patientHeight_m"/>	
+</DisplayField>
+<DisplayField id="SUBJECTINFORMATION_PATIENTID" header="Patient ID" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/subjectInformation/patientID"/>	
+</DisplayField>
+<DisplayField id="SUBJECTINFORMATION_PATIENTBIRTHDATE" header="Patient ID" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/subjectInformation/patientBirthdate"/>	
+</DisplayField>
+<DisplayField id="STUDYINFORMATION_STUDYDATE" header="Study date" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/studyInformation/studyDate"/>	
+</DisplayField>
+<DisplayField id="STUDYINFORMATION_STUDYTIME" header="Study time" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/studyInformation/studyTime"/>	
+</DisplayField>
+<DisplayField id="STUDYINFORMATION_STUDYID" header="Study ID" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/studyInformation/studyID"/>	
+</DisplayField>
+<DisplayField id="STUDYINFORMATION_ACCESSIONNUMBER" header="Accession number" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/studyInformation/accessionNumber"/>	
+</DisplayField>
+<DisplayField id="STUDYINFORMATION_REFERRINGPHYSICIANNAME" header="Referring physician" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/studyInformation/referringPhysicianName"/>	
+</DisplayField>
+<DisplayField id="STUDYINFORMATION_STUDYDESCRIPTION" header="Study description" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/studyInformation/studyDescription"/>	
+</DisplayField>
+<DisplayField id="STUDYINFORMATION_STUDYINSTANCEUID" header="Study instance UID" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/studyInformation/studyInstanceUID"/>	
+</DisplayField>
+<DisplayField id="STUDYINFORMATION_BODYPARTEXAMINED" header="Body part" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/studyInformation/bodyPartExamined"/>	
+</DisplayField>
+<DisplayField id="MEASUREMENTINFORMATION_MEASUREMENTID" header="Measurement ID" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/measurementInformation/measurementID"/>	
+</DisplayField>
+<DisplayField id="MEASUREMENTINFORMATION_SERIESDATE" header="Series date" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/measurementInformation/seriesDate"/>	
+</DisplayField>
+<DisplayField id="MEASUREMENTINFORMATION_SERIESTIME" header="Series time" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/measurementInformation/seriesTime"/>	
+</DisplayField>
+<DisplayField id="MEASUREMENTINFORMATION_PATIENTPOSITION" header="Patient position" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/measurementInformation/patientPosition"/>	
+</DisplayField>
+<DisplayField id="MEASUREMENTINFORMATION_RELATIVETABLEPOSITION_X" header="Rel table pos x" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/measurementInformation/relativeTablePosition/x"/>	
+</DisplayField>
+<DisplayField id="MEASUREMENTINFORMATION_RELATIVETABLEPOSITION_Y" header="Rel table pos y" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/measurementInformation/relativeTablePosition/y"/>	
+</DisplayField>
+<DisplayField id="MEASUREMENTINFORMATION_RELATIVETABLEPOSITION_Z" header="Rel table pos z" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/measurementInformation/relativeTablePosition/z"/>	
+</DisplayField>
+<DisplayField id="MEASUREMENTINFORMATION_INITIALSERIESNUMBER" header="Initial series number" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/measurementInformation/initialSeriesNumber"/>	
+</DisplayField>
+<DisplayField id="MEASUREMENTINFORMATION_PROTOCOLNAME" header="Protocol name" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/measurementInformation/protocolName"/>	
+</DisplayField>
+<DisplayField id="MEASUREMENTINFORMATION_SEQUENCENAME" header="Sequence name" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/measurementInformation/sequenceName"/>	
+</DisplayField>
+<DisplayField id="MEASUREMENTINFORMATION_SERIESDESCRIPTION" header="Series description" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/measurementInformation/seriesDescription"/>	
+</DisplayField>
+<DisplayField id="MEASUREMENTINFORMATION_MEASUREMENTDEPENDENCY_DEPENDENCYTYPE" header="Dependency type" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/measurementInformation/measurementDependency/dependencyType"/>	
+</DisplayField>
+<DisplayField id="MEASUREMENTINFORMATION_MEASUREMENTDEPENDENCY_MEASUREMENTID" header="Dependency meas ID" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/measurementInformation/measurementDependency/measurementID"/>	
+</DisplayField>
+<DisplayField id="MEASUREMENTINFORMATION_SERIESINSTANCEUIDROOT" header="Series instance UID" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/measurementInformation/seriesInstanceUIDRoot"/>	
+</DisplayField>
+<DisplayField id="MEASUREMENTINFORMATION_FRAMEOFREFERENCEUID" header="Frame of ref UID" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/measurementInformation/frameOfReferenceUID"/>	
+</DisplayField>
+<DisplayField id="MEASUREMENTINFORMATION_REFERENCEDIMAGESEQUENCE_REFERENCEDSOPINS" header="Referenced SOP UID" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/measurementInformation/referencedImageSequence/referencedSOPInstanceUID"/>	
+</DisplayField>
+<DisplayField id="ACQUISITIONSYSTEMINFORMATION_SYSTEMVENDOR" header="System vendor" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/acquisitionSystemInformation/systemVendor"/>	
+</DisplayField>
+<DisplayField id="ACQUISITIONSYSTEMINFORMATION_SYSTEMMODEL" header="System model" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/acquisitionSystemInformation/systemModel"/>	
+</DisplayField>
+<DisplayField id="ACQUISITIONSYSTEMINFORMATION_SYSTEMFIELDSTRENGTH_T" header="Field strength T" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/acquisitionSystemInformation/systemFieldStrength_T"/>	
+</DisplayField>
+<DisplayField id="ACQUISITIONSYSTEMINFORMATION_RELATIVERECEIVERNOISEBANDWIDTH" header="Rel receiver noise bandwith" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/acquisitionSystemInformation/relativeReceiverNoiseBandwidth"/>	
+</DisplayField>
+<DisplayField id="ACQUISITIONSYSTEMINFORMATION_RECEIVERCHANNELS" header="Receiver channels" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/acquisitionSystemInformation/receiverChannels"/>	
+</DisplayField>
+<DisplayField id="ACQUISITIONSYSTEMINFORMATION_COILLABELLIST" header="Coil labels" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/acquisitionSystemInformation/coilLabelList"/>	
+</DisplayField>
+<DisplayField id="ACQUISITIONSYSTEMINFORMATION_INSTITUTIONNAME" header="Institution name" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/acquisitionSystemInformation/institutionName"/>	
+</DisplayField>
+<DisplayField id="ACQUISITIONSYSTEMINFORMATION_STATIONNAME" header="Station name" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/acquisitionSystemInformation/stationName"/>	
+</DisplayField>
+<DisplayField id="ACQUISITIONSYSTEMINFORMATION_DEVICEID" header="Device ID" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/acquisitionSystemInformation/deviceID"/>	
+</DisplayField>
+<DisplayField id="ACQUISITIONSYSTEMINFORMATION_DEVICESERIALNUMBER" header="Device serial number" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/acquisitionSystemInformation/deviceSerialNumber"/>	
+</DisplayField>
+<DisplayField id="EXPERIMENTALCONDITIONS_H1RESONANCEFREQUENCY_HZ" header="H1 res freq Hz" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/experimentalConditions/H1resonanceFrequency_Hz"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODEDSPACE_MATRIXSIZE_X" header="Enc matrix x" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodedSpace/matrixSize/x"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODEDSPACE_MATRIXSIZE_Y" header="Enc matrix y" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodedSpace/matrixSize/y"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODEDSPACE_MATRIXSIZE_Z" header="Enc matrix z" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodedSpace/matrixSize/z"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODEDSPACE_FIELDOFVIEW_MM_X" header="Enc FOV x mm" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodedSpace/fieldOfView_mm/x"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODEDSPACE_FIELDOFVIEW_MM_Y" header="Enc Fov y mm" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodedSpace/fieldOfView_mm/y"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODEDSPACE_FIELDOFVIEW_MM_Z" header="Enc FOV z mm" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodedSpace/fieldOfView_mm/z"/>	
+</DisplayField>
+<DisplayField id="ENCODING_RECONSPACE_MATRIXSIZE_X" header="Rec matrix x" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/reconSpace/matrixSize/x"/>	
+</DisplayField>
+<DisplayField id="ENCODING_RECONSPACE_MATRIXSIZE_Y" header="Rec matrix y" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/reconSpace/matrixSize/y"/>	
+</DisplayField>
+<DisplayField id="ENCODING_RECONSPACE_MATRIXSIZE_Z" header="Rec matrix z" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/reconSpace/matrixSize/z"/>	
+</DisplayField>
+<DisplayField id="ENCODING_RECONSPACE_FIELDOFVIEW_MM_X" header="Rec FOV x mm" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/reconSpace/fieldOfView_mm/x"/>	
+</DisplayField>
+<DisplayField id="ENCODING_RECONSPACE_FIELDOFVIEW_MM_Y" header="Rec FOV y mm" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/reconSpace/fieldOfView_mm/y"/>	
+</DisplayField>
+<DisplayField id="ENCODING_RECONSPACE_FIELDOFVIEW_MM_Z" header="Rec FOV z mm" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/reconSpace/fieldOfView_mm/z"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_0_MINIMUM" header="Kstep_0 min" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/kspace_encoding_step_0/minimum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_0_MAXIMUM" header="Kstep_0 max" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/kspace_encoding_step_0/maximum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_0_CENTER" header="Kstep_0 ctr" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/kspace_encoding_step_0/center"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_1_MINIMUM" header="Kstep_1 min" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/kspace_encoding_step_1/minimum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_1_MAXIMUM" header="Kstep_1 max" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/kspace_encoding_step_1/maximum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_1_CENTER" header="Kstep_1 ctr" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/kspace_encoding_step_1/center"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_2_MINIMUM" header="Kstep_2 min" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/kspace_encoding_step_2/minimum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_2_MAXIMUM" header="Kstep_2 max" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/kspace_encoding_step_2/maximum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_2_CENTER" header="Kstep_2 ctr" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/kspace_encoding_step_2/center"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_AVERAGE_MINIMUM" header="Avg min" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/average/minimum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_AVERAGE_MAXIMUM" header="Avg max" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/average/maximum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_AVERAGE_CENTER" header="Avg ctr" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/average/center"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_SLICE_MINIMUM" header="Slice min" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/slice/minimum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_SLICE_MAXIMUM" header="Slice max" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/slice/maximum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_SLICE_CENTER" header="Slice ctr" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/slice/center"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_CONTRAST_MINIMUM" header="Contrast min" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/contrast/minimum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_CONTRAST_MAXIMUM" header="Contrast max" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/contrast/maximum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_CONTRAST_CENTER" header="Contrast ctr" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/contrast/center"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_PHASE_MINIMUM" header="Phase min" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/phase/minimum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_PHASE_MAXIMUM" header="Phase max" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/phase/maximum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_PHASE_CENTER" header="Phase ctr" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/phase/center"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_REPETITION_MINIMUM" header="Rep min" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/repetition/minimum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_REPETITION_MAXIMUM" header="Rep max" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/repetition/maximum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_REPETITION_CENTER" header="Rep ctr" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/repetition/center"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_SET_MINIMUM" header="Set min" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/set/minimum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_SET_MAXIMUM" header="Set max" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/set/maximum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_SET_CENTER" header="Set ctr" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/set/center"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_SEGMENT_MINIMUM" header="Segm min" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/segment/minimum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_SEGMENT_MAXIMUM" header="Segm max" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/segment/maximum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_SEGMENT_CENTER" header="Segm ctr" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/segment/center"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_USER_0_MINIMUM" header="User_0 min" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/user_0/minimum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_USER_0_MAXIMUM" header="User_0 max" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/user_0/maximum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_USER_0_CENTER" header="User_0 ctr" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/user_0/center"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_USER_1_MINIMUM" header="User_1 min" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/user_1/minimum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_USER_1_MAXIMUM" header="User_1 max" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/user_1/maximum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_USER_1_CENTER" header="User_1 ctr" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/user_1/center"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_USER_2_MINIMUM" header="User_2 min" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/user_2/minimum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_USER_2_MAXIMUM" header="User_2 max" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/user_2/maximum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_USER_2_CENTER" header="User_2 ctr" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/user_2/center"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_USER_3_MINIMUM" header="User_3 min" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/user_3/minimum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_USER_3_MAXIMUM" header="User_3 max" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/user_3/maximum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_USER_3_CENTER" header="User_3 ctr" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/user_3/center"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_USER_4_MINIMUM" header="User_4 min" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/user_4/minimum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_USER_4_MAXIMUM" header="User_4 max" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/user_4/maximum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_USER_4_CENTER" header="User_4 ctr" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/user_4/center"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_USER_5_MINIMUM" header="User_5 min" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/user_5/minimum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_USER_5_MAXIMUM" header="User_5 max" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/user_5/maximum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_USER_5_CENTER" header="User_5 ctr" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/user_5/center"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_USER_6_MINIMUM" header="User_6 min" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/user_6/minimum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_USER_6_MAXIMUM" header="User_6 max" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/user_6/maximum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_USER_6_CENTER" header="User_6 ctr" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/user_6/center"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_USER_7_MINIMUM" header="User_7 min" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/user_7/minimum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_USER_7_MAXIMUM" header="User_7 max" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/user_7/maximum"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ENCODINGLIMITS_USER_7_CENTER" header="User_7 ctr" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/encodingLimits/user_7/center"/>	
+</DisplayField>
+<DisplayField id="ENCODING_TRAJECTORY" header="Trajectory" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/trajectory"/>	
+</DisplayField>
+<DisplayField id="ENCODING_PARALLELIMAGING_ACCELERATIONFACTOR_KSPACE_ENC_STEP_1" header="PI acc factor kstep_1" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/parallelImaging/accelerationFactor/kspace_enc_step_1"/>
+</DisplayField>
+<DisplayField id="ENCODING_PARALLELIMAGING_ACCELERATIONFACTOR_KSPACE_ENC_STEP_2" header="PI acc factor kstep_2" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/parallelImaging/accelerationFactor/kspace_enc_step_2"/>
+</DisplayField>
+<DisplayField id="ENCODING_PARALLELIMAGING_CALIBRATIONMODE" header="PI calibration mode" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/parallelImaging/calibrationMode"/>	
+</DisplayField>
+<DisplayField id="ENCODING_PARALLELIMAGING_INTERLEAVINGDIMENSION" header="PI interleaving dim" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/parallelImaging/interleavingDimension"/>	
+</DisplayField>
+<DisplayField id="ENCODING_PARALLELIMAGING_MULTIBAND_DELTAKZ" header="PI multiband deltaKz" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/parallelImaging/multiband/deltaKz"/>	
+</DisplayField>
+<DisplayField id="ENCODING_PARALLELIMAGING_MULTIBAND_MULTIBAND_FACTOR" header="PI multiband factor" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/parallelImaging/multiband/multiband_factor"/>	
+</DisplayField>
+<DisplayField id="ENCODING_PARALLELIMAGING_MULTIBAND_CALIBRATION" header="PI multiband calibration" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/parallelImaging/multiband/calibration"/>	
+</DisplayField>
+<DisplayField id="ENCODING_PARALLELIMAGING_MULTIBAND_CALIBRATION_ENCODING" header="PI multiband calibration enc" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/parallelImaging/multiband/calibration_encoding"/>	
+</DisplayField>
+<DisplayField id="ENCODING_ECHOTRAINLENGTH" header="Echo train length" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/echoTrainLength"/>	
+</DisplayField>
+<DisplayField id="ENCODING_MULTIBAND_DELTAKZ" header="Multiband deltaKz" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/multiband/deltaKz"/>	
+</DisplayField>
+<DisplayField id="ENCODING_MULTIBAND_MULTIBAND_FACTOR" header="Multiband factor" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/multiband/multiband_factor"/>	
+</DisplayField>
+<DisplayField id="ENCODING_MULTIBAND_CALIBRATION" header="Multiband calibration" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/multiband/calibration"/>	
+</DisplayField>
+<DisplayField id="ENCODING_MULTIBAND_CALIBRATION_ENCODING" header="Multiband calibration enc" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/encoding/multiband/calibration_encoding"/>	
+</DisplayField>
+<DisplayField id="SEQUENCEPARAMETERS_TR" header="TR" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/sequenceParameters/TR"/>	
+</DisplayField>
+<DisplayField id="SEQUENCEPARAMETERS_TE" header="TE" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/sequenceParameters/TE"/>	
+</DisplayField>
+<DisplayField id="SEQUENCEPARAMETERS_TI" header="TI" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/sequenceParameters/TI"/>	
+</DisplayField>
+<DisplayField id="SEQUENCEPARAMETERS_FLIPANGLE_DEG" header="Flip angle deg" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/sequenceParameters/flipAngle_deg"/>	
+</DisplayField>
+<DisplayField id="SEQUENCEPARAMETERS_SEQUENCE_TYPE" header="Sequence type" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/sequenceParameters/sequence_type"/>	
+</DisplayField>
+<DisplayField id="SEQUENCEPARAMETERS_ECHO_SPACING" header="Echo spacing" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/sequenceParameters/echo_spacing"/>	
+</DisplayField>
+<DisplayField id="SEQUENCEPARAMETERS_DIFFUSIONDIMENSION" header="Diffusion dimension" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/sequenceParameters/diffusionDimension"/>	
+</DisplayField>
+<DisplayField id="SEQUENCEPARAMETERS_DIFFUSIONSCHEME" header="Diffusion scheme" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/sequenceParameters/diffusionScheme"/>	
+</DisplayField>
+<DisplayField id="WAVEFORMINFORMATIONLIST" header="Waveform Info" visible="true" searchable="true">
+	<DisplayFieldElement name="Field1" schema-element="mrd:mrdScanData/waveformInformationList"/>	
+</DisplayField>
+	<DisplayVersion versionName="listing" default-order-by="SESSION_LABEL" default-sort-order="DESC" brief-description="mrdScanData" dark-color="9999CC" light-color="CCCCFF">
+		<DisplayFieldRef id="PROJECT"/>
+		<DisplayFieldRef id="SESSION_LABEL"/>
+		<DisplayFieldRef id="ID"/>
+		<DisplayFieldRef id="VERSION"/>
+		<DisplayFieldRef id="SUBJECTINFORMATION_PATIENTWEIGHT_KG"/>
+		<DisplayFieldRef id="SUBJECTINFORMATION_PATIENTHEIGHT_M"/>
+		<DisplayFieldRef id="SUBJECTINFORMATION_PATIENTBIRTHDATE"/>
+		<DisplayFieldRef id="SEQUENCEPARAMETERS_TR"/>
+		<DisplayFieldRef id="SEQUENCEPARAMETERS_TE"/>
+		<DisplayFieldRef id="SEQUENCEPARAMETERS_TI"/>
+		<DisplayFieldRef id="SEQUENCEPARAMETERS_FLIPANGLE_DEG"/>
+		<DisplayFieldRef id="SEQUENCEPARAMETERS_SEQUENCE_TYPE"/>
+		<DisplayFieldRef id="SEQUENCEPARAMETERS_ECHO_SPACING"/>
+		<DisplayFieldRef id="SEQUENCEPARAMETERS_DIFFUSIONDIMENSION"/>
+		<DisplayFieldRef id="SEQUENCEPARAMETERS_DIFFUSIONSCHEME"/>
+		<DisplayFieldRef id="EXPERIMENTALCONDITIONS_H1RESONANCEFREQUENCY_HZ"/>
+		<DisplayFieldRef id="ENCODING_ENCODEDSPACE_MATRIXSIZE_X"/>
+		<DisplayFieldRef id="ENCODING_ENCODEDSPACE_MATRIXSIZE_Y"/>
+		<DisplayFieldRef id="ENCODING_ENCODEDSPACE_MATRIXSIZE_Z"/>
+		<DisplayFieldRef id="ENCODING_ENCODEDSPACE_FIELDOFVIEW_MM_X"/>
+		<DisplayFieldRef id="ENCODING_ENCODEDSPACE_FIELDOFVIEW_MM_Y"/>
+		<DisplayFieldRef id="ENCODING_ENCODEDSPACE_FIELDOFVIEW_MM_Z"/>
+		<DisplayFieldRef id="ENCODING_RECONSPACE_MATRIXSIZE_X"/>
+		<DisplayFieldRef id="ENCODING_RECONSPACE_MATRIXSIZE_Y"/>
+		<DisplayFieldRef id="ENCODING_RECONSPACE_MATRIXSIZE_Z"/>
+		<DisplayFieldRef id="ENCODING_RECONSPACE_FIELDOFVIEW_MM_X"/>
+		<DisplayFieldRef id="ENCODING_RECONSPACE_FIELDOFVIEW_MM_Y"/>
+		<DisplayFieldRef id="ENCODING_RECONSPACE_FIELDOFVIEW_MM_Z"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_0_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_0_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_0_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_1_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_1_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_1_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_2_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_2_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_2_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_AVERAGE_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_AVERAGE_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_AVERAGE_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_SLICE_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_SLICE_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_SLICE_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_CONTRAST_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_CONTRAST_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_CONTRAST_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_PHASE_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_PHASE_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_PHASE_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_REPETITION_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_REPETITION_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_REPETITION_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_SET_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_SET_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_SET_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_SEGMENT_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_SEGMENT_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_SEGMENT_CENTER"/>
+		<DisplayFieldRef id="ENCODING_TRAJECTORY"/>
+		<DisplayFieldRef id="ENCODING_PARALLELIMAGING_ACCELERATIONFACTOR_KSPACE_ENC_STEP_1"/>
+		<DisplayFieldRef id="ENCODING_PARALLELIMAGING_ACCELERATIONFACTOR_KSPACE_ENC_STEP_2"/>
+		<DisplayFieldRef id="ENCODING_PARALLELIMAGING_CALIBRATIONMODE"/>
+		<DisplayFieldRef id="ENCODING_PARALLELIMAGING_INTERLEAVINGDIMENSION"/>
+		<DisplayFieldRef id="ENCODING_PARALLELIMAGING_MULTIBAND_DELTAKZ"/>
+		<DisplayFieldRef id="ENCODING_PARALLELIMAGING_MULTIBAND_MULTIBAND_FACTOR"/>
+		<DisplayFieldRef id="ENCODING_PARALLELIMAGING_MULTIBAND_CALIBRATION"/>
+		<DisplayFieldRef id="ENCODING_PARALLELIMAGING_MULTIBAND_CALIBRATION_ENCODING"/>
+		<DisplayFieldRef id="ENCODING_ECHOTRAINLENGTH"/>
+		<DisplayFieldRef id="ENCODING_MULTIBAND_DELTAKZ"/>
+		<DisplayFieldRef id="ENCODING_MULTIBAND_MULTIBAND_FACTOR"/>
+		<DisplayFieldRef id="ENCODING_MULTIBAND_CALIBRATION"/>
+		<DisplayFieldRef id="ENCODING_MULTIBAND_CALIBRATION_ENCODING"/>
+		<DisplayFieldRef id="WAVEFORMINFORMATIONLIST"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_MEASUREMENTID"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_SERIESDATE"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_SERIESTIME"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_PATIENTPOSITION"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_RELATIVETABLEPOSITION_X"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_RELATIVETABLEPOSITION_Y"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_RELATIVETABLEPOSITION_Z"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_INITIALSERIESNUMBER"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_PROTOCOLNAME"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_SEQUENCENAME"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_SERIESDESCRIPTION"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_MEASUREMENTDEPENDENCY_DEPENDENCYTYPE"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_MEASUREMENTDEPENDENCY_MEASUREMENTID"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_SERIESINSTANCEUIDROOT"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_FRAMEOFREFERENCEUID"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_REFERENCEDIMAGESEQUENCE_REFERENCEDSOPINS"/>
+		<DisplayFieldRef id="ACQUISITIONSYSTEMINFORMATION_SYSTEMVENDOR"/>
+		<DisplayFieldRef id="ACQUISITIONSYSTEMINFORMATION_SYSTEMMODEL"/>
+		<DisplayFieldRef id="ACQUISITIONSYSTEMINFORMATION_SYSTEMFIELDSTRENGTH_T"/>
+		<DisplayFieldRef id="ACQUISITIONSYSTEMINFORMATION_RELATIVERECEIVERNOISEBANDWIDTH"/>
+		<DisplayFieldRef id="ACQUISITIONSYSTEMINFORMATION_RECEIVERCHANNELS"/>
+		<DisplayFieldRef id="ACQUISITIONSYSTEMINFORMATION_INSTITUTIONNAME"/>
+		<DisplayFieldRef id="ACQUISITIONSYSTEMINFORMATION_STATIONNAME"/>
+		<DisplayFieldRef id="ACQUISITIONSYSTEMINFORMATION_DEVICEID"/>
+		<DisplayFieldRef id="ACQUISITIONSYSTEMINFORMATION_DEVICESERIALNUMBER"/>
+	</DisplayVersion>
+	<DisplayVersion versionName="full" default-order-by="SESSION_LABEL" default-sort-order="DESC" brief-description="mrdScanData" dark-color="9999CC" light-color="CCCCFF">
+		<DisplayFieldRef id="PROJECT"/>
+		<DisplayFieldRef id="SESSION_LABEL"/>
+		<DisplayFieldRef id="ID"/>
+		<DisplayFieldRef id="VERSION"/>
+		<DisplayFieldRef id="SUBJECTINFORMATION_PATIENTNAME"/>
+		<DisplayFieldRef id="SUBJECTINFORMATION_PATIENTWEIGHT_KG"/>
+		<DisplayFieldRef id="SUBJECTINFORMATION_PATIENTHEIGHT_M"/>
+		<DisplayFieldRef id="SUBJECTINFORMATION_PATIENTID"/>
+		<DisplayFieldRef id="SUBJECTINFORMATION_PATIENTBIRTHDATE"/>
+		<DisplayFieldRef id="STUDYINFORMATION_STUDYDATE"/>
+		<DisplayFieldRef id="STUDYINFORMATION_STUDYTIME"/>
+		<DisplayFieldRef id="STUDYINFORMATION_STUDYID"/>
+		<DisplayFieldRef id="STUDYINFORMATION_ACCESSIONNUMBER"/>
+		<DisplayFieldRef id="STUDYINFORMATION_REFERRINGPHYSICIANNAME"/>
+		<DisplayFieldRef id="STUDYINFORMATION_STUDYDESCRIPTION"/>
+		<DisplayFieldRef id="STUDYINFORMATION_STUDYINSTANCEUID"/>
+		<DisplayFieldRef id="STUDYINFORMATION_BODYPARTEXAMINED"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_MEASUREMENTID"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_SERIESDATE"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_SERIESTIME"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_PATIENTPOSITION"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_RELATIVETABLEPOSITION_X"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_RELATIVETABLEPOSITION_Y"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_RELATIVETABLEPOSITION_Z"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_INITIALSERIESNUMBER"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_PROTOCOLNAME"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_SEQUENCENAME"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_SERIESDESCRIPTION"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_MEASUREMENTDEPENDENCY_DEPENDENCYTYPE"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_MEASUREMENTDEPENDENCY_MEASUREMENTID"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_SERIESINSTANCEUIDROOT"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_FRAMEOFREFERENCEUID"/>
+		<DisplayFieldRef id="MEASUREMENTINFORMATION_REFERENCEDIMAGESEQUENCE_REFERENCEDSOPINS"/>
+		<DisplayFieldRef id="ACQUISITIONSYSTEMINFORMATION_SYSTEMVENDOR"/>
+		<DisplayFieldRef id="ACQUISITIONSYSTEMINFORMATION_SYSTEMMODEL"/>
+		<DisplayFieldRef id="ACQUISITIONSYSTEMINFORMATION_SYSTEMFIELDSTRENGTH_T"/>
+		<DisplayFieldRef id="ACQUISITIONSYSTEMINFORMATION_RELATIVERECEIVERNOISEBANDWIDTH"/>
+		<DisplayFieldRef id="ACQUISITIONSYSTEMINFORMATION_RECEIVERCHANNELS"/>
+		<DisplayFieldRef id="ACQUISITIONSYSTEMINFORMATION_COILLABELLIST"/>
+		<DisplayFieldRef id="ACQUISITIONSYSTEMINFORMATION_INSTITUTIONNAME"/>
+		<DisplayFieldRef id="ACQUISITIONSYSTEMINFORMATION_STATIONNAME"/>
+		<DisplayFieldRef id="ACQUISITIONSYSTEMINFORMATION_DEVICEID"/>
+		<DisplayFieldRef id="ACQUISITIONSYSTEMINFORMATION_DEVICESERIALNUMBER"/>
+		<DisplayFieldRef id="EXPERIMENTALCONDITIONS_H1RESONANCEFREQUENCY_HZ"/>
+		<DisplayFieldRef id="ENCODING_ENCODEDSPACE_MATRIXSIZE_X"/>
+		<DisplayFieldRef id="ENCODING_ENCODEDSPACE_MATRIXSIZE_Y"/>
+		<DisplayFieldRef id="ENCODING_ENCODEDSPACE_MATRIXSIZE_Z"/>
+		<DisplayFieldRef id="ENCODING_ENCODEDSPACE_FIELDOFVIEW_MM_X"/>
+		<DisplayFieldRef id="ENCODING_ENCODEDSPACE_FIELDOFVIEW_MM_Y"/>
+		<DisplayFieldRef id="ENCODING_ENCODEDSPACE_FIELDOFVIEW_MM_Z"/>
+		<DisplayFieldRef id="ENCODING_RECONSPACE_MATRIXSIZE_X"/>
+		<DisplayFieldRef id="ENCODING_RECONSPACE_MATRIXSIZE_Y"/>
+		<DisplayFieldRef id="ENCODING_RECONSPACE_MATRIXSIZE_Z"/>
+		<DisplayFieldRef id="ENCODING_RECONSPACE_FIELDOFVIEW_MM_X"/>
+		<DisplayFieldRef id="ENCODING_RECONSPACE_FIELDOFVIEW_MM_Y"/>
+		<DisplayFieldRef id="ENCODING_RECONSPACE_FIELDOFVIEW_MM_Z"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_0_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_0_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_0_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_1_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_1_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_1_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_2_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_2_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_KSPACE_ENCODING_STEP_2_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_AVERAGE_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_AVERAGE_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_AVERAGE_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_SLICE_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_SLICE_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_SLICE_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_CONTRAST_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_CONTRAST_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_CONTRAST_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_PHASE_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_PHASE_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_PHASE_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_REPETITION_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_REPETITION_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_REPETITION_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_SET_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_SET_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_SET_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_SEGMENT_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_SEGMENT_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_SEGMENT_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_USER_0_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_USER_0_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_USER_0_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_USER_1_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_USER_1_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_USER_1_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_USER_2_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_USER_2_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_USER_2_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_USER_3_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_USER_3_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_USER_3_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_USER_4_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_USER_4_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_USER_4_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_USER_5_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_USER_5_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_USER_5_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_USER_6_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_USER_6_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_USER_6_CENTER"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_USER_7_MINIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_USER_7_MAXIMUM"/>
+		<DisplayFieldRef id="ENCODING_ENCODINGLIMITS_USER_7_CENTER"/>
+		<DisplayFieldRef id="ENCODING_TRAJECTORY"/>
+		<DisplayFieldRef id="ENCODING_PARALLELIMAGING_ACCELERATIONFACTOR_KSPACE_ENC_STEP_1"/>
+		<DisplayFieldRef id="ENCODING_PARALLELIMAGING_ACCELERATIONFACTOR_KSPACE_ENC_STEP_2"/>
+		<DisplayFieldRef id="ENCODING_PARALLELIMAGING_CALIBRATIONMODE"/>
+		<DisplayFieldRef id="ENCODING_PARALLELIMAGING_INTERLEAVINGDIMENSION"/>
+		<DisplayFieldRef id="ENCODING_PARALLELIMAGING_MULTIBAND_DELTAKZ"/>
+		<DisplayFieldRef id="ENCODING_PARALLELIMAGING_MULTIBAND_MULTIBAND_FACTOR"/>
+		<DisplayFieldRef id="ENCODING_PARALLELIMAGING_MULTIBAND_CALIBRATION"/>
+		<DisplayFieldRef id="ENCODING_PARALLELIMAGING_MULTIBAND_CALIBRATION_ENCODING"/>
+		<DisplayFieldRef id="ENCODING_ECHOTRAINLENGTH"/>
+		<DisplayFieldRef id="ENCODING_MULTIBAND_DELTAKZ"/>
+		<DisplayFieldRef id="ENCODING_MULTIBAND_MULTIBAND_FACTOR"/>
+		<DisplayFieldRef id="ENCODING_MULTIBAND_CALIBRATION"/>
+		<DisplayFieldRef id="ENCODING_MULTIBAND_CALIBRATION_ENCODING"/>
+		<DisplayFieldRef id="SEQUENCEPARAMETERS_TR"/>
+		<DisplayFieldRef id="SEQUENCEPARAMETERS_TE"/>
+		<DisplayFieldRef id="SEQUENCEPARAMETERS_TI"/>
+		<DisplayFieldRef id="SEQUENCEPARAMETERS_FLIPANGLE_DEG"/>
+		<DisplayFieldRef id="SEQUENCEPARAMETERS_SEQUENCE_TYPE"/>
+		<DisplayFieldRef id="SEQUENCEPARAMETERS_ECHO_SPACING"/>
+		<DisplayFieldRef id="SEQUENCEPARAMETERS_DIFFUSIONDIMENSION"/>
+		<DisplayFieldRef id="SEQUENCEPARAMETERS_DIFFUSIONSCHEME"/>
+		<DisplayFieldRef id="WAVEFORMINFORMATIONLIST"/>
+	</DisplayVersion>
+</Displays>
