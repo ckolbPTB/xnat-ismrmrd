@@ -107,7 +107,7 @@
 					<xs:element maxOccurs="1" minOccurs="0" name="experimentalConditions">
 						<xs:complexType>
 							<xs:all>
-								<xs:element name="H1resonanceFrequency_Hz" type="xs:long" />
+								<xs:element minOccurs="0" name="H1resonanceFrequency_Hz" type="xs:long" />
 							</xs:all>
 						</xs:complexType>
 					</xs:element>
